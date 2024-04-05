@@ -1,18 +1,28 @@
 #include "ListaCircularDoble.hpp"
 
+//********************************************************* Constructor
 template <typename T>
 ListaCircularDoble<T>::ListaCircularDoble(){
     tamano = 0;
     cabeza = nullptr;
 }
 
+//********************************************************* Destructor
 template <typename T>
 ListaCircularDoble<T>::~ListaCircularDoble(){
 
 }
+
+//********************************************************* Constructor de copias
+template <typename T>
+ListaCircularDoble<T>::ListaCircularDoble(const ListaCircularDoble &lista){
+
+}
+
+//********************************************************* Sobrecarga operador =
 /*
 
-ListaCircularDoble(const ListaCircularDoble &lista);
+
 ListaCircularDoble& operator=(const ListaCircularDoble &lista);
 */
 
@@ -35,3 +45,5 @@ void ListaCircularDoble<T>::eliminar(){
     delete nodoActual;
     --tamano;
 }
+
+//*********************************************************
