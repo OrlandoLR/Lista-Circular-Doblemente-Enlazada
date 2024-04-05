@@ -19,6 +19,7 @@ public:
     int obtenerTamano() const;
     T obtenerCabeza() const;
     bool estaVacia() const;
+
     void vaciar();
     void imprimir() const;
     void imprimirEnReversa() const;

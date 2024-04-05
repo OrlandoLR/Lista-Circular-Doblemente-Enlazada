@@ -8,4 +8,6 @@ int main()
     //ListaCircularDoble<int> A;
     ListaCircularDoble<int> A;
     return 0;
+
+    int a;
 }
