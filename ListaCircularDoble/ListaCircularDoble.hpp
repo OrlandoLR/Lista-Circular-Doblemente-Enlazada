@@ -14,7 +14,7 @@ public:
     void agregar(T valor);
     void eliminar();
 
-    bool buscar(T valor) const;
+    bool buscar(T valor) const; //Existencia primera ocurrencia
 
     void avanzarCabeza();
     void retrocederCabeza();

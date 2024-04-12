@@ -43,7 +43,6 @@ ListaCircularDoble<T>& ListaCircularDoble<T>::operator=(const ListaCircularDoble
     return *this;
 };
 
-
 //********************************************************* Agregar
 template <typename T>
 void ListaCircularDoble<T>::agregar(T valor){
@@ -81,6 +80,53 @@ void ListaCircularDoble<T>::eliminar(){
     --tamano;
 }
 
+//********************************************************* Buscar
+template <typename T>
+bool ListaCircularDoble<T>::buscar(T valor) const{
+    Nodo * nodoActual = cabeza;
+    for(int i = 0; i < tamano; ++i){
+        if(nodoActual->valor == valor) return true;
+        nodoActual = nodoActual->siguiente;
+    }
+    return false;
+}
+
+//********************************************************* Avanzar cabeza
+template <typename T>
+void ListaCircularDoble<T>::avanzarCabeza(){
+    cabeza = cabeza->siguiente;
+};
+
+//********************************************************* Retroceder cabeza
+template <typename T>
+void ListaCircularDoble<T>::retrocederCabeza(){
+    cabeza = cabeza->anterior;
+}
+
+//********************************************************* Obtener tamano
+template <typename T>
+int ListaCircularDoble<T>::obtenerTamano() const{
+    return tamano;
+};
+
+//********************************************************* Obtener cabeza (valor)
+template <typename T>
+T ListaCircularDoble<T>::obtenerCabeza() const{
+    return cabeza->valor;
+};
+
+//********************************************************* Esta vacia
+template <typename T>
+bool ListaCircularDoble<T>::estaVacia() const{
+    return tamano == 0;
+};
+
+//********************************************************* Vaciar
+template <typename T>
+void ListaCircularDoble<T>::vaciar(){
+    while(cabeza != nullptr) eliminar();
+};
+
 //********************************************************* Imprimir
 template <typename T>
 void ListaCircularDoble<T>::imprimir() const{
@@ -93,3 +139,17 @@ void ListaCircularDoble<T>::imprimir() const{
     }
     std::cout << "\b\b.";
 }
+
+//********************************************************* Imprimir en reversa.
+template <typename T>
+void ListaCircularDoble<T>::imprimirEnReversa() const{
+    Nodo * nodoActual = cabeza->anterior;
+
+    std::cout << "Ultimo->";
+    for(int i = 0; i < tamano; ++i){
+        std::cout << nodoActual->valor << ", ";
+        nodoActual = nodoActual->anterior;
+    }
+    std::cout << "\b\b.";
+}
+
