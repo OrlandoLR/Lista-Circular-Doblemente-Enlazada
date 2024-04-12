@@ -13,14 +13,18 @@ public:
     // MÉTODOS OPERATIVOS.
     void agregar(T valor);
     void eliminar();
+
     bool buscar(T valor) const;
+
     void avanzarCabeza();
     void retrocederCabeza();
+
     int obtenerTamano() const;
     T obtenerCabeza() const;
-    bool estaVacia() const;
 
+    bool estaVacia() const;
     void vaciar();
+
     void imprimir() const;
     void imprimirEnReversa() const;
 
